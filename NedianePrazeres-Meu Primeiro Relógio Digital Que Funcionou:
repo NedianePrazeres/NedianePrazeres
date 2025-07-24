@@ -1,0 +1,42 @@
+Meu primeiro relógio digital que realmente funciona!
+
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio Digital</title>
+
+    <style>
+        body {
+            background-color:hwb(271 14% 6%);
+            color:oklab(86.298% -0.19268 0.1605);
+            font-family: arial, sans, sans-serif;
+            text-align: center;
+            margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Desenvolvido por (Powered by): <br> Nediane Prazeres</h2>
+<h1>Relógio Digital</h1>
+
+
+<p id="clock" style="font-size: 48px; font-weight: bold;"></p>
+<script>
+
+    function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+</body>
+</html>
